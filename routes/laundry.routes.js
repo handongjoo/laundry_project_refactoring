@@ -21,4 +21,4 @@ router.get('/laundry/catchlist/:supplierId')
 // 진행중인 세탁물 상태 변경
 router.patch('/laundry/catchlist/:supplierId/:laundryId')
 
-module.exprots = router;
+module.exports = router

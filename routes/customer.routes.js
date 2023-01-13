@@ -3,9 +3,11 @@
 const express = require('express')
 const router = express.Router()
 
-router.post('/customer/signup')
+const customerController = require('../controller/customer.controller')
+
+router.post('/customer/signup', customerController.signUp)
 router.post('/customer/login')
 router.patch('/customer/profile/:customerId')
 
-module.exprots = router;
+module.exports = router
 

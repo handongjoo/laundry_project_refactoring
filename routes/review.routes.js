@@ -10,4 +10,4 @@ router.patch('/review/:supplierId')
 //리뷰 삭제
 router.delete('/review/:supplier')
 
-module.exprots = router;
+module.exports = router

@@ -5,4 +5,4 @@ router.post('/supplier/signup')
 router.post('/supplier/login')
 router.patch('/supplier/profile/:supplierId')
 
-module.exprots = router;
+module.exports = router

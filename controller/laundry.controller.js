@@ -1,0 +1,1 @@
+const {Customer, Supplier, Laundry, Review} = require('../models')
