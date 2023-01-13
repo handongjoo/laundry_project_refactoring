@@ -36,7 +36,6 @@ const customerLogin = async (req, res) => {
     try {
         const {email, password} = req.body
         const customer = await Customer.findOne({where: {email}})
-        console.log(customer)
         if (!customer) {
             res.status(400).json({message: "사용자가 없습니다."})
             return

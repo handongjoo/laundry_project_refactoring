@@ -1,14 +1,16 @@
 const express = require('express')
 const router = express.Router()
+
+const laundryController = require('../controller/laundry.controller')
 const customerMiddleware = require('../middlewares/customer-middleware')
 const supplierMiddleware = require('../middlewares/supplier-middleware')
 // Customer 영역
 // 세탁물 신청
-router.post('/laundry/apply')
+router.post('/laundry/apply', customerMiddleware, laundryController.applyLaundry )
 // 세탁물 취소
-router.post('/laundry/cancel/:laundryId')
+router.delete('/laundry/cancel/:laundryId', customerMiddleware, laundryController.cancelLaundry)
 // 내가 신청한 세탁물 조회
-router.get('/laundry/list/:customerId')
+router.get('/laundry/list/:customerId', customerMiddleware, laundryController.getMyLaundrys)
 
 // Supplier 영역
 // 고객이 신청한 세탁물 목록 조회
