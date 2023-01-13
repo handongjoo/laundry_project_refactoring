@@ -20,7 +20,7 @@ module.exports = {
         default : 0
       },
       picture: {
-        type: Sequelize.BLOB
+        type: Sequelize.STRING
       },
       request: {
         type: Sequelize.STRING

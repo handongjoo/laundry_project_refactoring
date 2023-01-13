@@ -1,5 +1,5 @@
 const {Customer, Supplier, Laundry, Review} = require('../models')
-
+// Customer 영역
 // Customer 세탁물 신청
 const applyLaundry = async (req, res) => {
     try {
@@ -36,12 +36,26 @@ const cancelLaundry = async (req, res) => {
 // 내가 신청한 세탁물 조회
 const getMyLaundrys = async (req, res) => {
     try {
-        const customerId = req.params
+        const customerId = res.locals.customer.customerId
         const laundrys = await Laundry.findAll({where: {customerId}})
-    
+        
         res.status(200).json({laundrys})
     } catch (error) {
         console.log(error)
     }
 }
-module.exports = {applyLaundry, cancelLaundry, getMyLaundrys}
+
+/************************************************************************************************************************************/
+
+// Supplier 영역
+// 고객이 신청한(수거 안한) 세탁물 조회
+const getCustomerApplyList = async (req, res) => {
+    try {
+        const applyList = await Laundry.findAll({where: {status:0}})
+    
+        res.status(200).json({applyList})
+    } catch (error) {
+        console.log(error)
+    }
+}
+module.exports = {applyLaundry, cancelLaundry, getMyLaundrys, getCustomerApplyList}
