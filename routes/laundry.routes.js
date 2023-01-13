@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
+const customerMiddleware = require('../middlewares/customer-middleware')
+const supplierMiddleware = require('../middlewares/supplier-middleware')
 // Customer 영역
 // 세탁물 신청
 router.post('/laundry/apply')

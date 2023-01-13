@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const customerMiddleware = require('../middlewares/customer-middleware')
+const supplierMiddleware = require('../middlewares/supplier-middleware')
 
 //Supplier 리뷰 조회
 router.get('/review/:supplierId')

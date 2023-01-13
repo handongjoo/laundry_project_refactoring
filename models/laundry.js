@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Laundry.init({
+    laundryId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     customerId: DataTypes.INTEGER,
     supplierId: DataTypes.INTEGER,
     status: {
